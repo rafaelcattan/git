@@ -1,0 +1,26 @@
+---
+title: "Introdução ao Rmd"
+author: "Benilton Carvalho"
+date: "3/8/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Capitulo 1
+
+Esta é uma introdução. Este **texto** será em **negrito**. Esta *parte será em itálico*.
+
+```{r modelo_regressao, echo=FALSE, include=FALSE}
+modelo = lm(dist~speed, data=cars)
+summary(modelo)
+```
+
+O modelo ajustado apresenta coeficiente angular de `r round(coef(modelo)[2], 2)`. Portanto, para cada aumento unitário de velocidade, a resposta média tem um incremento de `r coef(modelo)[2]` unidades.
+
+```{r plot_dados}
+with(cars, plot(speed, dist))
+```
+
